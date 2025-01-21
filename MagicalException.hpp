@@ -1,0 +1,7 @@
+#ifndef MAGICALEXCEPTION_HPP
+#define MAGICALEXCEPTION_HPP
+
+
+
+
+#endif
