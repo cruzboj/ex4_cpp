@@ -21,9 +21,9 @@ class PhoenixGotchi : public MagicalPet{
 
 void PhoenixGotchi::feed(int amount){
     if(amount < 0 )
-        std::cout << "Error: Negative feed amount\n";
+        throw MagicalException("Error: Negative feed amount\n");
     else if(amount > 10)
-        std::cout << "Error: Feed amount too high for Dragon!";
+        throw MagicalException("Error: Feed amount too high for Dragon!");
     else if(hunger <= 30 && happiness <= 40){
         hunger += amount;
         happiness += amount/3;
@@ -32,7 +32,7 @@ void PhoenixGotchi::feed(int amount){
 
 void PhoenixGotchi::play(){
     if(hunger >= 20)
-        std::cout << "Error: Phoniex is too hungry to play!";
+        throw MagicalException("Error: Phoniex is too hungry to play!");
     else
         if(hunger -3 > 0)
             hunger -= 3;
