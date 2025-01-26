@@ -3,7 +3,7 @@
 #include "MagicalException.hpp"
 #include "DragonGotchi.hpp"
 #include "PhoenixGotchi.hpp"
-//#include "ReadWriteToFile.hpp"
+#include "ReadWriteToFile.hpp"
 
 #define dbg(x) std::cout << x << std::endl
 
@@ -82,54 +82,52 @@ int main() {
                 pets[0]->showStatus();
                 pets[1]->showStatus();
             }
-            #pragma region choice6_7
-            // else if (choice == 6) {
-            //     // 6. SAVE
-            //     int dHun = 0, dHap = 0;
-            //     int pHun = 0, pHap = 0;
+            else if (choice == 6) {
+                // 6. SAVE
+                int dHun = 0, dHap = 0;
+                int pHun = 0, pHap = 0;
 
-            //     // Example: dynamic_cast or public getters
-            //     DragonGotchi* dg = dynamic_cast<DragonGotchi*>(pets[0]);
-            //     PhoenixGotchi* ph = dynamic_cast<PhoenixGotchi*>(pets[1]);
+                // Example: dynamic_cast or public getters
+                DragonGotchi* dg = dynamic_cast<DragonGotchi*>(pets[0]);
+                PhoenixGotchi* ph = dynamic_cast<PhoenixGotchi*>(pets[1]);
 
-            //     // Retrieve current data (assuming you have getters)
-            //     if (dg) {
-            //         dHun = dg->getHunger();
-            //         dHap = dg->getHappiness();
-            //     }
-            //     if (ph) {
-            //         pHun = ph->getHunger();
-            //         pHap = ph->getHappiness();
-            //     }
+                // Retrieve current data (assuming you have getters)
+                if (dg) {
+                    dHun = dg->getHunger();
+                    dHap = dg->getHappiness();
+                }
+                if (ph) {
+                    pHun = ph->getHunger();
+                    pHap = ph->getHappiness();
+                }
 
-            //     ReadWriteToFile rw;
-            //     rw.saveData(dHun, dHap, pHun, pHap);
-            //     std::cout << "Data saved to petsData.txt\n";
-            // }
-            // else if (choice == 7) {
-            //     // 7. LOAD
-            //     int dHun = 0, dHap = 0;
-            //     int pHun = 0, pHap = 0;
+                ReadWriteToFile rw;
+                rw.saveData(dHun, dHap, pHun, pHap);
+                std::cout << "Data saved to petsData.txt\n";
+            }
+            else if (choice == 7) {
+                // 7. LOAD
+                int dHun = 0, dHap = 0;
+                int pHun = 0, pHap = 0;
 
-            //     ReadWriteToFile rw;
-            //     rw.loadData(dHun, dHap, pHun, pHap);
+                ReadWriteToFile rw;
+                rw.loadData(dHun, dHap, pHun, pHap);
 
-            //     // Now apply the loaded data
-            //     DragonGotchi* dg = dynamic_cast<DragonGotchi*>(pets[0]);
-            //     PhoenixGotchi* ph = dynamic_cast<PhoenixGotchi*>(pets[1]);
+                // Now apply the loaded data
+                DragonGotchi* dg = dynamic_cast<DragonGotchi*>(pets[0]);
+                PhoenixGotchi* ph = dynamic_cast<PhoenixGotchi*>(pets[1]);
 
-            //     if (dg) {
-            //         dg->setHunger(dHun);
-            //         dg->setHappiness(dHap);
-            //     }
-            //     if (ph) {
-            //         ph->setHunger(pHun);
-            //         ph->setHappiness(pHap);
-            //     }
+                if (dg) {
+                    dg->setHunger(dHun);
+                    dg->setHappiness(dHap);
+                }
+                if (ph) {
+                    ph->setHunger(pHun);
+                    ph->setHappiness(pHap);
+                }
 
-            //     std::cout << "Data loaded from petsData.txt\n";
-            // }
-            #pragma endregion
+                std::cout << "Data loaded from petsData.txt\n";
+            }
             else if (choice == 8) {
                 // 8. QUIT
                 running = false;

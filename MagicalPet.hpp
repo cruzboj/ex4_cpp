@@ -4,9 +4,6 @@
 class MagicalPet{
     
     public:
-        // MagicalPet();
-        // ~MagicalPet();
-
         //Pure virtual methods: 
         virtual void feed(int amount) = 0;
         virtual void play() = 0;
@@ -14,7 +11,5 @@ class MagicalPet{
         virtual void train() = 0;
         virtual void showStatus() = 0;
 };
-
-//MagicalPet::~MagicalPet(){}
 
 #endif
