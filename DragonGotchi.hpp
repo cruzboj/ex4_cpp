@@ -18,6 +18,9 @@ class DragonGotchi : public MagicalPet{
         void showStatus();
 };
 
+DragonGotchi::~DragonGotchi(){
+    std::cout << "DragonGotchi destructor called\n";
+}
 
 void DragonGotchi::feed(int amount){
     if(amount < 0 )
